@@ -1,4 +1,4 @@
-const fs      = require('fs');
+const fs = require('fs');
 
 const templateDirs  = fs.readdirSync('./templates');
 const engineDirs    = fs.readdirSync('./engines');
@@ -10,14 +10,16 @@ const bench = (engine, template, data, n) => {
   }
   const end = Date.now();
   return end - start;
-}
+};
 
 let results = '# RENDER \n';
 
 for (let dir of templateDirs) { 
 
-  const data = './templates/' + dir + '/data.js';
+  const data = require('./templates/' + dir + '/data.js');
   results += `\n ### ${dir} \n`;
+
+  let benchmarks = [];
 
   for (let engine of engineDirs ) {
     const engineName = engine.split('.').slice(0, -1).toString();
@@ -27,8 +29,14 @@ for (let dir of templateDirs) {
     const n            = 5000;
 
     const benchmark = bench(enginePath, templatePath, data, n)
-    results += `\`${engineName}\` => **${benchmark}ms** <br/> \n`;
+    benchmarks.push({ engineName, benchmark });
   };
+
+  benchmarks.sort((a, b) => a.benchmark - b.benchmark);
+
+  for (let { engineName, benchmark } of benchmarks) {
+    results += `\`${engineName}\` => **${benchmark}ms** <br/> \n`;
+  }
   
 };
 

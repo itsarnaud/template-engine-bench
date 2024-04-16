@@ -1,9 +1,11 @@
 # RENDER 
 
  ### friends 
-`handlebars` => **1412ms** <br/> 
-`igodust` => **210ms** <br/> 
+`igodust` => **819ms** <br/> 
+`handlebars` => **2358ms** <br/> 
+`pug` => **5280ms** <br/> 
 
  ### simple-0 
-`handlebars` => **189ms** <br/> 
-`igodust` => **56ms** <br/> 
+`igodust` => **58ms** <br/> 
+`handlebars` => **193ms** <br/> 
+`pug` => **461ms** <br/> 

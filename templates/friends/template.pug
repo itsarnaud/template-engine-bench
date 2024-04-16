@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Friends
+  body
+    div.friends
+      each friend in friends
+        div.friend
+          ul
+            li Name: #{friend.getFullNameDust}
+            li Balance: #{friend.balance}
+            li Age: #{friend.age}
+            li Address: #{friend.address}
+            li Image: 
+              img(src=friend.picture)
