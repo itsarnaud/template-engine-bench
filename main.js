@@ -17,7 +17,8 @@ let results = '# RENDER \n';
 for (let dir of templateDirs) { 
 
   const data = require('./templates/' + dir + '/data.js');
-  results += `\n ### ${dir} \n`;
+  const n    = 5000;
+  results += `\n ### ${dir} (runned ${n} times) \n`;
 
   let benchmarks = [];
 
@@ -26,10 +27,9 @@ for (let dir of templateDirs) {
     const enginePath = require('./engines/' + engineName);
 
     const templatePath = './templates/' + dir + '/template.' + enginePath.ext;
-    const n            = 5000;
 
     const benchmark = bench(enginePath, templatePath, data, n)
-    benchmarks.push({ engineName, benchmark });
+    benchmarks.push({ engineName, benchmark});
   };
 
   benchmarks.sort((a, b) => a.benchmark - b.benchmark);
