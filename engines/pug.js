@@ -1,10 +1,16 @@
 const pug = require('pug');
 
+const CACHE = {};
+
 module.exports = {
   name: 'pug',
   ext: 'pug',
-  render: function(template, data) {
-    const compiledFunction = pug.compileFile(template);
-    return compiledFunction(data);
+  render: function(templatePath, data) {
+    let template = CACHE[templatePath];
+    if (!template) {
+      template = pug.compileFile(templatePath);
+      CACHE[templatePath] = template;
+    }
+    return template(data);
   }
 }
