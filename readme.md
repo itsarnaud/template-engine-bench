@@ -26,7 +26,7 @@ Once the benchmark is completed, the results will be automatically updated in th
 
 The tests were carried out on:
 - Node v20.12.0
-- MacBook Pro M1, 13-inch with 16GB of RAM (2020
+- MacBook Pro M1, 13-inch with 16GB of RAM (2020)
 
 <!-- <render performance> -->
 # RENDER 
