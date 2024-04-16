@@ -1,7 +1,35 @@
+# Templating Engine Benchmark
 
+This project is a benchmark designed to evaluate the performance of various JavaScript template engines. It allows developers to compare rendering performance of several popular template engines in various scenarios.
+
+## How to use ?
+
+**1. Clone this repo on your machine:**
+```bash
+git clone https://github.com/itsarnaud/templating-engine-bench.git
+```
+
+**2. Install dependencies:**
+```bash
+npm install
+```
+
+**3. Launch the benchmark by executing:**
+```bash
+node main.js
+```
+
+**4. Results:<br/>**
+Once the benchmark is completed, the results will be automatically updated in the readme file.
+
+## Current results
+
+The tests were carried out on:
+- Node v20.12.0
+- MacBook Pro M1, 13-inch with 16GB of RAM (2020
 
 <!-- <render performance> -->
-# RENDER 
+## RENDER 
 
 ### friends (runned 10000 times) 
 `eta` => **1192ms** <br/> 
@@ -60,3 +88,31 @@
 
 <!-- <end> -->
 
+## Adding a new Template Engine
+
+To add a new template engine to this project, follow these simple steps:
+
+**1. Create a file for the template engine:<br/>**
+In the `engines` directory, create a new file named after your template engine, for example `my-engine.js`. Take a look at the files already created for the syntax.
+
+```
+engines
+ ├── igodust.js
+ ├── my-engine.js
+ └── ...
+```
+
+**2. Add test templates: <br/>**
+Place your template files in the templates directory, following the existing structure. Each test group should have a data file (.js or .json) and template files for each template engine you want to include in the benchmark.
+
+```
+templates
+ ├── group1
+ │   ├── data.js (or json)
+ │   ├── template.dust
+ │   ├── template.my-engine
+ │   └── ...
+ └── ...
+```
+
+ And that's it, all you have to do is launch the benchmark!
