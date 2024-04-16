@@ -1,7 +1,18 @@
 const fs = require('fs');
 
-const templateDirs  = fs.readdirSync('./templates');
-const engineDirs    = fs.readdirSync('./engines');
+let templateDirs  = fs.readdirSync('./templates');
+let engineDirs    = fs.readdirSync('./engines');
+
+let enabledGroups = [];
+let enabledEngines = [];
+
+if (enabledGroups && enabledGroups.length > 0) {
+  templateDirs = templateDirs.filter(dir => enabledGroups.includes(dir));
+}
+
+if (enabledEngines && enabledEngines.length > 0) {
+  engineDirs = engineDirs.filter(engine => enabledEngines.includes(engine.split('.').slice(0, -1).toString()));
+}
 
 const bench = (engine, template, data, n) => {
   const start = Date.now();
@@ -16,11 +27,16 @@ let results = '# RENDER \n';
 
 for (let dir of templateDirs) { 
 
-  const dataPath = './templates/' + dir + '/data.js';
+  const dataPathJs   = './templates/' + dir + '/data.js';
+  const dataPathJson = './templates/' + dir + '/data.json';
   let data;
 
-  if (fs.existsSync(dataPath)) {
-    data = require(dataPath);
+  
+
+  if (fs.existsSync(dataPathJs)) {
+    data = require(dataPathJs);
+  } else if (fs.existsSync(dataPathJson)) {
+    data = require(dataPathJson)
   } else {
     data = {};
   }
@@ -40,7 +56,7 @@ for (let dir of templateDirs) {
     }
     console.log(`${engineName} working on ${dir}...`);
     const benchmark = bench(enginePath, templatePath, data, n)
-    console.log(`${engineName} has finished to work !`)
+    console.log(`${engineName} has finished to work !\n`)
     benchmarks.push({ engineName, benchmark});
   };
 

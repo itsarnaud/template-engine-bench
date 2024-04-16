@@ -1,0 +1,27 @@
+.search-results-container
+  .searching#searching
+    .wait-indicator-icon
+    | Searching...
+  #resultsContainer
+    .hd
+      span.count
+        span#count #{totalCount}
+        | results
+      .view-modifiers
+        .view-select
+          | View: 
+          .view-icon.view-icon-selected#viewIconGallery
+            i.icon-th
+          .view-icon#viewIconList
+            i.icon-th-list
+    #resultsTarget
+      .search-results(class=view)
+        each record in searchRecords
+          .search-item
+            .search-item-container.drop-shadow
+              .img-container
+                img(src=record.imgUrl)
+              h4.title
+                a(href=record.viewItemUrl) #{record.title}
+              if record.description
+                | #{record.description}

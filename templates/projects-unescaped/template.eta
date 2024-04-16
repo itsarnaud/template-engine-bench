@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title><%= it.title %></title>
+  </head>
+  <body>
+    <p><%= it.text %></p>
+    <% if (it.projects && it.projects.length > 0) { %>
+      <% it.projects.forEach(function(project) { %>
+        <a href="<%= project.url %>"><%= project.name %></a>
+        <p><%= project.description %></p>
+      <% }); %>
+    <% } else { %>
+      No projects
+    <% } %>
+  </body>
+</html>

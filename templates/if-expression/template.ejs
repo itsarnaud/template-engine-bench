@@ -1,0 +1,18 @@
+<% accounts.forEach(function(account) { %>
+  <div>
+    <% if(account.accountStatus === "closed") { %>
+      <div>
+        Your account has been closed!
+      </div>
+    <% } else if(account.accountStatus === "suspended") { %>
+      <div>
+        Your account has been temporarily suspended
+      </div>
+    <% } else if(account.accountStatus === "open") { %>
+      <div>
+        Bank balance:
+        <span class="<%= account.balance < 0 ? 'negative' : 'positive' %>"><%= account.formattedBalance %></span>
+      </div>
+    <% } %>
+  </div>
+<% }); %>
