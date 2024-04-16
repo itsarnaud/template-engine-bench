@@ -5,6 +5,7 @@
     "fs": "^0.0.1-security",
     "handlebars": "^4.7.8",
     "igo-dust": "^0.3.5",
+    "liquidjs": "^10.11.0",
     "marko": "^5.33.18",
     "path": "^0.12.7",
     "pug": "^3.0.2"

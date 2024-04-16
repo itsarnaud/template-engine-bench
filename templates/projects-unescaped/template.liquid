@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <p>{{ text }}</p>
+    {% for project in projects %}
+      <a href="{{ project.url }}">{{ project.name }}</a>
+      <p>{{ project.description }}</p>
+    {% endfor %}
+    {% if projects.size == 0 %}
+      No projects
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,22 @@
+{% for account in accounts %}
+<div>
+  {% if account.accountStatus == "closed" %}
+  <div>
+      Your account has been closed!
+  </div>
+  {% elsif account.accountStatus == "suspended" %}
+  <div>
+      Your account has been temporarily suspended
+  </div>
+  {% elsif account.accountStatus == "open" %}
+  <div>
+      Bank balance:
+      {% if account.balance < 0 %}
+        <span class="negative">{{ account.formattedBalance }}</span>
+      {% else %}
+        <span class="positive">{{ account.formattedBalance }}</span>
+      {% endif %}
+  </div>
+  {% endif %}
+</div>
+{% endfor %}

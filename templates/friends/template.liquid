@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Friends</title>
+</head>
+<body>
+  <div class="friends">
+    {% for friend in friends %}
+    <div class="friend">
+      <ul>
+        <li>Name: {{ friend.getFullNameDust }}</li>
+        <li>
+          Balance: {{ friend.balance }}
+        </li>
+        <li>
+          Age: {{ friend.age }}
+        </li>
+        <li>
+          Address: {{ friend.address }}
+        </li>
+        <li>
+          Image: <img src="{{ friend.picture }}">
+        </li>
+        <li>
+          Company: {{ friend.company }}
+        </li>
+        <li>
+          Email: <a href="mailto:{{ friend.email }}">{{ friend.email }}</a>
+        </li>
+        <li>
+          About: {{ friend.about }}
+        </li>
+        {% if friend.tags %}
+        <li>
+          Tags:
+          <ul>
+            {% for tag in friend.tags %}
+            <li>
+              {{ tag }}
+            </li>
+            {% endfor %}
+          </ul>
+        </li>
+        {% endif %}
+        {% if friend.friends %}
+        <li>
+          Friends:
+          <ul>
+            {% for friend in friend.friends %}
+            <li>
+              {{ friend.name }} ({{ friend.id }})
+            </li>
+            {% endfor %}
+          </ul>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+</body>
+</html>

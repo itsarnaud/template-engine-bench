@@ -41,7 +41,7 @@ for (let dir of templateDirs) {
     data = {};
   }
   
-  const n  = 10000;
+  const n  = 5000;
   results += `\n### ${dir} (runned ${n} times) \n`;
 
   let benchmarks = [];
