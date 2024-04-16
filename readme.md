@@ -109,6 +109,7 @@ engines
  ├── my-engine.js
  └── ...
 ```
+**⚠️ WARNING: Asynchronous rendering methods, such as those returning Promises, are not supported by the benchmarking tool at the moment. Ensure that your rendering method is synchronous to work with the benchmarking tool effectively. ⚠️**
 
 **2. Add test templates: <br/>**
 Place your template files in the templates directory, following the existing structure. Each test group should have a data file (.js or .json) and template files for each template engine you want to include in the benchmark.
