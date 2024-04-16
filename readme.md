@@ -1,13 +1,15 @@
 # RENDER 
 
- ### friends (runned 5000 times) 
-`igodust` => **819ms** <br/> 
-`ejs` => **871ms** <br/> 
-`handlebars` => **2342ms** <br/> 
-`pug` => **5228ms** <br/> 
+ ### friends (runned 10000 times) 
+`eta` => **1182ms** <br/> 
+`igodust` => **1639ms** <br/> 
+`ejs` => **1711ms** <br/> 
+`handlebars` => **5613ms** <br/> 
+`pug` => **10337ms** <br/> 
 
- ### simple-0 (runned 5000 times) 
-`igodust` => **57ms** <br/> 
-`ejs` => **71ms** <br/> 
-`handlebars` => **194ms** <br/> 
-`pug` => **454ms** <br/> 
+ ### simple-0 (runned 10000 times) 
+`igodust` => **112ms** <br/> 
+`eta` => **136ms** <br/> 
+`ejs` => **144ms** <br/> 
+`handlebars` => **457ms** <br/> 
+`pug` => **912ms** <br/> 

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Friends</title>
+</head>
+<body>
+    <div class="friends">
+        <% it.friends.forEach(friend => { %>
+        <div class="friend">
+            <ul>
+                <li>Name: <%= friend.getFullNameDust %></li>
+                <li>
+                    Balance: <%= friend.balance %>
+                </li>
+                <li>
+                    Age: <%= friend.age %>
+                </li>
+                <li>
+                    Address: <%= friend.address %>
+                </li>
+                <li>
+                    Image: <img src="<%= friend.picture %>">
+                </li>
+                <li>
+                    Company: <%= friend.company %>
+                </li>
+                <li>
+                    Email: <a href="mailto:<%= friend.email %>"><%= friend.email %></a>
+                </li>
+                <li>
+                    About: <%= friend.about %>
+                </li>
+                <% if (friend.tags) { %>
+                <li>
+                    Tags:
+                    <ul>
+                        <% friend.tags.forEach(tag => { %>
+                        <li>
+                            <%= tag %>
+                        </li>
+                        <% }) %>
+                    </ul>
+                </li>
+                <% } %>
+                <% if (friend.friends) { %>
+                <li>
+                    Friends:
+                    <ul>
+                        <% friend.friends.forEach(friend => { %>
+                        <li>
+                            <%= friend.name %> (<%= friend.id %>)
+                        </li>
+                        <% }) %>
+                    </ul>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+        <% }) %>
+    </div>
+</body>
+</html>

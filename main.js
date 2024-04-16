@@ -16,19 +16,31 @@ let results = '# RENDER \n';
 
 for (let dir of templateDirs) { 
 
-  const data = require('./templates/' + dir + '/data.js');
-  const n    = 5000;
+  const dataPath = './templates/' + dir + '/data.js';
+  let data;
+
+  if (fs.existsSync(dataPath)) {
+    data = require(dataPath);
+  } else {
+    data = {};
+  }
+  
+  const n  = 10000;
   results += `\n ### ${dir} (runned ${n} times) \n`;
 
   let benchmarks = [];
 
   for (let engine of engineDirs ) {
     const engineName = engine.split('.').slice(0, -1).toString();
-    const enginePath = require('./engines/' + engineName);
+    const enginePath = require('./engines/' + engine);
 
     const templatePath = './templates/' + dir + '/template.' + enginePath.ext;
-
+    if (!fs.existsSync(templatePath)) {
+      continue;
+    }
+    console.log(`${engineName} working on ${dir}...`);
     const benchmark = bench(enginePath, templatePath, data, n)
+    console.log(`${engineName} has finished to work !`)
     benchmarks.push({ engineName, benchmark});
   };
 
