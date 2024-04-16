@@ -3,7 +3,7 @@ const fs = require('fs');
 let templateDirs  = fs.readdirSync('./templates');
 let engineDirs    = fs.readdirSync('./engines');
 
-let enabledGroups = [];
+let enabledGroups  = [];
 let enabledEngines = [];
 
 if (enabledGroups && enabledGroups.length > 0) {
@@ -42,7 +42,7 @@ for (let dir of templateDirs) {
   }
   
   const n  = 10000;
-  results += `\n ### ${dir} (runned ${n} times) \n`;
+  results += `\n### ${dir} (runned ${n} times) \n`;
 
   let benchmarks = [];
 
@@ -68,4 +68,9 @@ for (let dir of templateDirs) {
   
 };
 
-fs.writeFileSync('readme.md', results);
+
+let readmeContent = fs.readFileSync('readme.md', 'utf8');
+let [before, between, after] = readmeContent.split(/(<!-- <render performance> -->[\s\S]*<!-- <end> -->)/);
+between = '<!-- <render performance> -->\n' + results + '\n<!-- <end> -->';
+readmeContent = before + between + after;
+fs.writeFileSync('readme.md', readmeContent);
