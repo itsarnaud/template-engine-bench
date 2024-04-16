@@ -4,7 +4,6 @@ module.exports = {
     name: 'igodust',
     ext: 'dust',
     render: function(template, data) {
-      igodust.renderFile(template, data);
-      return
+      return igodust.renderFile(template, data);
     }
 };

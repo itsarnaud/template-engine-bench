@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Friends</title>
+</head>
+<body>
+    <div class="friends">
+        <% friends.forEach(function(friend) { %>
+        <div class="friend">
+            <ul>
+                <li>Name: <%= friend.getFullNameDust %></li>
+                <li>
+                    Balance: <%= friend.balance %>
+                </li>
+                <li>
+                    Age: <%= friend.age %>
+                </li>
+                <li>
+                    Address: <%= friend.address %>
+                </li>
+                <li>
+                    Image: <img src="<%= friend.picture %>">
+                </li>
+            </ul>
+        </div>
+        <% }); %>
+    </div>
+</body>
+</html>
