@@ -1,5 +1,4 @@
 const fs      = require('fs');
-const data    = require('./templates/friends/data');
 
 const templateDirs  = fs.readdirSync('./templates');
 const engineDirs    = fs.readdirSync('./engines');
@@ -13,9 +12,12 @@ const bench = (engine, template, data, n) => {
   return end - start;
 }
 
+let results = '===RENDER=== \n';
+
 for (let dir of templateDirs) { 
 
   const data = './templates/' + dir + '/data.js';
+  results += `\n # ${dir} \n`;
 
   for (let engine of engineDirs ) {
     const engineName = engine.split('.').slice(0, -1).toString();
@@ -25,7 +27,9 @@ for (let dir of templateDirs) {
     const n            = 5000;
 
     const benchmark = bench(enginePath, templatePath, data, n)
-    console.log(`Le moteur ${engineName} à mis ${benchmark}ms à rendre ${n} fois le template ${dir}`);
+    results += `\`${engineName}\` => **${benchmark}ms** \n`;
   };
   
 };
+
+fs.writeFileSync('readme.md', results);
