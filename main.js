@@ -23,7 +23,7 @@ const bench = (engine, template, data, n) => {
   return end - start;
 };
 
-let results = '# RENDER \n';
+let results = '## RENDER \n';
 
 for (let dir of templateDirs) { 
 
