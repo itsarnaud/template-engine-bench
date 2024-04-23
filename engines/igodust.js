@@ -1,5 +1,7 @@
 const igodust = require('igo-dust');
 
+igodust.configure({ cache: true });
+
 module.exports = {
     name: 'igodust',
     ext: 'dust',
