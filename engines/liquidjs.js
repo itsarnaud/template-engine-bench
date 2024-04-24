@@ -1,5 +1,7 @@
 const { Liquid } = require('liquidjs');
-const engine = new Liquid();
+const engine = new Liquid({
+  cache: true
+});
 
 module.exports = {
   name: 'liquidjs',

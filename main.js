@@ -68,7 +68,7 @@ for (let dir of templateDirs) {
   
 };
 
-
+console.log(results);
 let readmeContent = fs.readFileSync('readme.md', 'utf8');
 let [before, between, after] = readmeContent.split(/(<!-- <render performance> -->[\s\S]*<!-- <end> -->)/);
 between = '<!-- <render performance> -->\n' + results + '\n<!-- <end> -->';

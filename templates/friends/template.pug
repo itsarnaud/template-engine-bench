@@ -14,3 +14,17 @@ html(lang="en")
             li Address: #{friend.address}
             li Image: 
               img(src=friend.picture)
+            li Company: #{friend.company}
+            li Email: 
+              a(href="mailto:#{friend.email}") #{friend.email}
+            li About: #{friend.about}
+            if friend.tags
+              li Tags:
+                ul
+                  each tag in friend.tags
+                    li #{tag}
+            if friend.friends
+              li Friends:
+                ul
+                  each subFriend in friend.friends
+                    li #{subFriend.name} (#{subFriend.id})
