@@ -25,74 +25,74 @@ Once the benchmark is completed, the results will be automatically updated in th
 ## Current results
 
 The tests were carried out on:
-- Node v20.12.0
-- MacBook Pro M1, 13-inch with 16GB of RAM (2020)
+- Node v21.7.2
+- MacBook Air M2, 15-inch with 16GB of RAM (2023)
 
 <!-- <render performance> -->
 ## RENDER 
 
 ### friends (runned 5000 times) 
-`pug` => **496ms** <br/> 
-`eta` => **553ms** <br/> 
-`igodust` => **570ms** <br/> 
-`ejs` => **784ms** <br/> 
-`handlebars` => **858ms** <br/> 
-`liquidjs` => **14667ms** <br/> 
+`pug` => **493ms** <br/> 
+`eta` => **548ms** <br/> 
+`igodust` => **566ms** <br/> 
+`ejs` => **769ms** <br/> 
+`handlebars` => **852ms** <br/> 
+`liquidjs` => **14720ms** <br/> 
 
 ### if-expression (runned 5000 times) 
-`pug` => **6ms** <br/> 
+`pug` => **5ms** <br/> 
 `igodust` => **8ms** <br/> 
-`liquidjs` => **82ms** <br/> 
+`liquidjs` => **81ms** <br/> 
 `eta` => **87ms** <br/> 
-`ejs` => **129ms** <br/> 
+`ejs` => **127ms** <br/> 
 
 ### projects-escaped (runned 5000 times) 
-`handlebars` => **38ms** <br/> 
-`igodust` => **43ms** <br/> 
-`eta` => **108ms** <br/> 
-`liquidjs` => **146ms** <br/> 
-`pug` => **157ms** <br/> 
-`ejs` => **184ms** <br/> 
+`handlebars` => **37ms** <br/> 
+`igodust` => **41ms** <br/> 
+`eta` => **107ms** <br/> 
+`liquidjs` => **143ms** <br/> 
+`pug` => **155ms** <br/> 
+`ejs` => **179ms** <br/> 
 
 ### projects-unescaped (runned 5000 times) 
 `igodust` => **9ms** <br/> 
-`handlebars` => **36ms** <br/> 
-`eta` => **106ms** <br/> 
-`liquidjs` => **142ms** <br/> 
-`pug` => **155ms** <br/> 
-`ejs` => **180ms** <br/> 
+`handlebars` => **35ms** <br/> 
+`eta` => **105ms** <br/> 
+`liquidjs` => **140ms** <br/> 
+`pug` => **151ms** <br/> 
+`ejs` => **178ms** <br/> 
 
 ### search-results (runned 5000 times) 
-`igodust` => **18ms** <br/> 
-`pug` => **40ms** <br/> 
-`handlebars` => **142ms** <br/> 
-`eta` => **163ms** <br/> 
-`ejs` => **587ms** <br/> 
+`igodust` => **16ms** <br/> 
+`pug` => **39ms** <br/> 
+`handlebars` => **147ms** <br/> 
+`eta` => **164ms** <br/> 
+`ejs` => **580ms** <br/> 
 `liquidjs` => **1344ms** <br/> 
 
 ### simple-0 (runned 5000 times) 
-`pug` => **1ms** <br/> 
+`pug` => **2ms** <br/> 
 `igodust` => **5ms** <br/> 
+`liquidjs` => **7ms** <br/> 
 `handlebars` => **8ms** <br/> 
-`liquidjs` => **8ms** <br/> 
-`eta` => **59ms** <br/> 
-`ejs` => **65ms** <br/> 
+`eta` => **57ms** <br/> 
+`ejs` => **59ms** <br/> 
 
 ### simple-1 (runned 5000 times) 
-`pug` => **7ms** <br/> 
-`igodust` => **11ms** <br/> 
-`handlebars` => **19ms** <br/> 
+`pug` => **6ms** <br/> 
+`igodust` => **10ms** <br/> 
+`handlebars` => **18ms** <br/> 
 `eta` => **89ms** <br/> 
-`liquidjs` => **98ms** <br/> 
-`ejs` => **167ms** <br/> 
+`liquidjs` => **95ms** <br/> 
+`ejs` => **164ms** <br/> 
 
 ### simple-2 (runned 5000 times) 
 `pug` => **6ms** <br/> 
 `igodust` => **9ms** <br/> 
 `handlebars` => **14ms** <br/> 
-`eta` => **90ms** <br/> 
-`liquidjs` => **93ms** <br/> 
-`ejs` => **150ms** <br/> 
+`eta` => **89ms** <br/> 
+`liquidjs` => **92ms** <br/> 
+`ejs` => **149ms** <br/> 
 
 <!-- <end> -->
 
