@@ -3,9 +3,7 @@ const fs = require('fs');
 let templateDirs  = fs.readdirSync('./templates');
 let engineDirs    = fs.readdirSync('./engines');
 
-// On peut tester seulement des templates donnés ici
 let enabledGroups  = [];
-// Et tester seulement des moteurs donnés ici
 let enabledEngines = [];
 
 if (enabledGroups && enabledGroups.length > 0) {
@@ -16,7 +14,6 @@ if (enabledEngines && enabledEngines.length > 0) {
   engineDirs = engineDirs.filter(engine => enabledEngines.includes(engine.split('.').slice(0, -1).toString()));
 }
 
-// La fonction qui va lancer le benchmark
 const bench = (engine, template, data, n) => {
   const start = Date.now();
   for (let i = 0; i < n; i++) {
