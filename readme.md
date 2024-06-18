@@ -125,3 +125,5 @@ templates
 ```
 
  And that's it, all you have to do is launch the benchmark!
+
+ PRs are welcome 😃❤️
