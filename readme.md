@@ -32,67 +32,67 @@ The tests were carried out on:
 ## RENDER 
 
 ### friends (runned 5000 times) 
-`pug` => **493ms** <br/> 
-`eta` => **548ms** <br/> 
-`igodust` => **566ms** <br/> 
-`ejs` => **769ms** <br/> 
-`handlebars` => **852ms** <br/> 
-`liquidjs` => **14720ms** <br/> 
+`pug` => **492ms** <br/> 
+`eta` => **558ms** <br/> 
+`igodust` => **572ms** <br/> 
+`handlebars` => **853ms** <br/> 
+`ejs` => **999ms** <br/> 
+`liquidjs` => **14877ms** <br/> 
 
 ### if-expression (runned 5000 times) 
 `pug` => **5ms** <br/> 
-`igodust` => **8ms** <br/> 
+`igodust` => **7ms** <br/> 
 `liquidjs` => **81ms** <br/> 
-`eta` => **87ms** <br/> 
-`ejs` => **127ms** <br/> 
+`eta` => **85ms** <br/> 
+`ejs` => **132ms** <br/> 
 
 ### projects-escaped (runned 5000 times) 
-`handlebars` => **37ms** <br/> 
-`igodust` => **41ms** <br/> 
-`eta` => **107ms** <br/> 
-`liquidjs` => **143ms** <br/> 
-`pug` => **155ms** <br/> 
-`ejs` => **179ms** <br/> 
+`handlebars` => **38ms** <br/> 
+`igodust` => **43ms** <br/> 
+`eta` => **108ms** <br/> 
+`liquidjs` => **145ms** <br/> 
+`pug` => **156ms** <br/> 
+`ejs` => **190ms** <br/> 
 
 ### projects-unescaped (runned 5000 times) 
-`igodust` => **9ms** <br/> 
-`handlebars` => **35ms** <br/> 
-`eta` => **105ms** <br/> 
-`liquidjs` => **140ms** <br/> 
-`pug` => **151ms** <br/> 
-`ejs` => **178ms** <br/> 
+`igodust` => **8ms** <br/> 
+`handlebars` => **36ms** <br/> 
+`eta` => **106ms** <br/> 
+`liquidjs` => **143ms** <br/> 
+`pug` => **155ms** <br/> 
+`ejs` => **190ms** <br/> 
 
 ### search-results (runned 5000 times) 
 `igodust` => **16ms** <br/> 
-`pug` => **39ms** <br/> 
-`handlebars` => **147ms** <br/> 
-`eta` => **164ms** <br/> 
-`ejs` => **580ms** <br/> 
-`liquidjs` => **1344ms** <br/> 
+`pug` => **40ms** <br/> 
+`handlebars` => **142ms** <br/> 
+`eta` => **163ms** <br/> 
+`ejs` => **720ms** <br/> 
+`liquidjs` => **1349ms** <br/> 
 
 ### simple-0 (runned 5000 times) 
 `pug` => **2ms** <br/> 
 `igodust` => **5ms** <br/> 
+`handlebars` => **7ms** <br/> 
 `liquidjs` => **7ms** <br/> 
-`handlebars` => **8ms** <br/> 
-`eta` => **57ms** <br/> 
-`ejs` => **59ms** <br/> 
+`eta` => **58ms** <br/> 
+`ejs` => **61ms** <br/> 
 
 ### simple-1 (runned 5000 times) 
 `pug` => **6ms** <br/> 
-`igodust` => **10ms** <br/> 
-`handlebars` => **18ms** <br/> 
-`eta` => **89ms** <br/> 
+`igodust` => **11ms** <br/> 
+`handlebars` => **17ms** <br/> 
+`eta` => **88ms** <br/> 
 `liquidjs` => **95ms** <br/> 
-`ejs` => **164ms** <br/> 
+`ejs` => **178ms** <br/> 
 
 ### simple-2 (runned 5000 times) 
-`pug` => **6ms** <br/> 
+`pug` => **7ms** <br/> 
 `igodust` => **9ms** <br/> 
-`handlebars` => **14ms** <br/> 
+`handlebars` => **13ms** <br/> 
 `eta` => **89ms** <br/> 
-`liquidjs` => **92ms** <br/> 
-`ejs` => **149ms** <br/> 
+`liquidjs` => **91ms** <br/> 
+`ejs` => **159ms** <br/> 
 
 <!-- <end> -->
 
