@@ -6,7 +6,7 @@
 </head>
 <body>
     <div class="friends">
-        <% it.friends.forEach(friend => { %>
+        <% it.friends.forEach(function(friend) { %>
         <div class="friend">
             <ul>
                 <li>Name: <%= friend.getFullNameDust %></li>
@@ -35,11 +35,11 @@
                 <li>
                     Tags:
                     <ul>
-                        <% friend.tags.forEach(tag => { %>
+                        <% friend.tags.forEach(function(tag) { %>
                         <li>
                             <%= tag %>
                         </li>
-                        <% }) %>
+                        <% }); %>
                     </ul>
                 </li>
                 <% } %>
@@ -47,17 +47,17 @@
                 <li>
                     Friends:
                     <ul>
-                        <% friend.friends.forEach(friend => { %>
+                        <% friend.friends.forEach(function(friend) { %>
                         <li>
                             <%= friend.name %> (<%= friend.id %>)
                         </li>
-                        <% }) %>
+                        <% }); %>
                     </ul>
                 </li>
                 <% } %>
             </ul>
         </div>
-        <% }) %>
+        <% }); %>
     </div>
 </body>
 </html>

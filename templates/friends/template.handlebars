@@ -9,36 +9,28 @@
         {{#each friends}}
         <div class="friend">
             <ul>
-                <li>Name: {{getFullNameDust}}</li>
-                <li>
-                    Balance: {{balance}}
-                </li>
-                <li>
-                    Age: {{age}}
-                </li>
-                <li>
-                    Address: {{address}}
-                </li>
-                <li>
-                    Image: <img src="{{picture}}">
-                </li>
-                <li>
-                    Company: {{company}}
-                </li>
-                <li>
-                    Email: <a href="mailto:{{email}}">{{email}}</a>
-                </li>
-                <li>
-                    About: {{about}}
-                </li>
-                {{#if tags}}
-                <li>
-                    Tags:
+                <li>Name: {{this.getFullNameDust}}</li>
+                <li>Balance: {{this.balance}}</li>
+                <li>Age: {{this.age}}</li>
+                <li>Address: {{this.address}}</li>
+                <li>Image: <img src="{{this.picture}}"></li>
+                <li>Company: {{this.company}}</li>
+                <li>Email: <a href="mailto:{{this.email}}">{{this.email}}</a></li>
+                <li>About: {{this.about}}</li>
+                {{#if this.tags}}
+                <li>Tags:
                     <ul>
-                        {{#each tags}}
-                        <li>
-                            {{this}}
-                        </li>
+                        {{#each this.tags}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </li>
+                {{/if}}
+                {{#if this.friends}}
+                <li>Friends:
+                    <ul>
+                        {{#each this.friends}}
+                        <li>{{this.name}} ({{this.id}})</li>
                         {{/each}}
                     </ul>
                 </li>

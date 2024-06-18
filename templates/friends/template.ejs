@@ -10,18 +10,31 @@
         <div class="friend">
             <ul>
                 <li>Name: <%= friend.getFullNameDust %></li>
-                <li>
-                    Balance: <%= friend.balance %>
+                <li>Balance: <%= friend.balance %></li>
+                <li>Age: <%= friend.age %></li>
+                <li>Address: <%= friend.address %></li>
+                <li>Image: <img src="<%= friend.picture %>"></li>
+                <li>Company: <%= friend.company %></li>
+                <li>Email: <a href="mailto:<%= friend.email %>"><%= friend.email %></a></li>
+                <li>About: <%= friend.about %></li>
+                <% if (friend.tags) { %>
+                <li>Tags:
+                    <ul>
+                        <% friend.tags.forEach(function(tag) { %>
+                        <li><%= tag %></li>
+                        <% }); %>
+                    </ul>
                 </li>
-                <li>
-                    Age: <%= friend.age %>
+                <% } %>
+                <% if (friend.friends) { %>
+                <li>Friends:
+                    <ul>
+                        <% friend.friends.forEach(function(friend) { %>
+                        <li><%= friend.name %> (<%= friend.id %>)</li>
+                        <% }); %>
+                    </ul>
                 </li>
-                <li>
-                    Address: <%= friend.address %>
-                </li>
-                <li>
-                    Image: <img src="<%= friend.picture %>">
-                </li>
+                <% } %>
             </ul>
         </div>
         <% }); %>
