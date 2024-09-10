@@ -1,4 +1,4 @@
-# Templating Engine Benchmark
+# Template Engine Benchmark
 
 This project is a benchmark designed to evaluate the performance of various JavaScript template engines. It allows developers to compare rendering performance of several popular template engines in various scenarios.
 
